@@ -99,7 +99,7 @@
         }
         if (this.discountCode.length == 5) {
           order.discountCode = this.discountCode
-        } else if (this.discountCode.length > 0 && this.discountCode.length < 5 || this.discountCode == null) {
+        } else if (this.discountCode == null || this.discountCode.length > 0 && this.discountCode.length < 5) {
           console.log("Invalid")
         }
         this.$axios.post('/order/new', order).then(resp => {
@@ -129,7 +129,7 @@
   }
 
 </script>
-<style>
+<style scoped>
   .is-padded {
     margin: 10px;
   }

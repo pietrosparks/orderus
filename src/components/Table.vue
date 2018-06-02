@@ -53,7 +53,7 @@
   }
 
 </script>
-<style>
+<style scoped>
   .is-teal {
     background-color: teal;
     color: white;

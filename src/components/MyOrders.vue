@@ -68,7 +68,7 @@
   }
 
 </script>
-<style>
+<style scoped>
   .is-open {
     background-color: teal;
     color: white;
