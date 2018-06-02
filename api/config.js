@@ -5,7 +5,6 @@ const path = require('path');
 const secrets = require('./dbconfig/secrets');
 const history = require('connect-history-api-fallback');
 const logger = require('morgan');
-const ejs = require('ejs');
 const serveStatic = require('serve-static');
 
 //CORS CONFIGURATION
@@ -45,7 +44,6 @@ module.exports = (app, express) => {
   app.use(bodyParser.urlencoded({
     extended: false
   }))
-  app.set('view engine', 'ejs');
   app.use('/api', api);
   app.use(history({
     verbose: true
