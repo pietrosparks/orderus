@@ -97,7 +97,7 @@
           customer: JSON.parse(localStorage.getItem('orderCred')),
           total: this.foodTotal
         }
-        if (this.discountCode.length == 5) {
+        if (this.discountCode && discountCode.length == 5) {
           order.discountCode = this.discountCode
         } else if (this.discountCode == null || this.discountCode.length > 0 && this.discountCode.length < 5) {
           console.log("Invalid")

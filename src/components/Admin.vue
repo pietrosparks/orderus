@@ -68,7 +68,7 @@
             <input type="text" class="input" placeholder="Food Type" v-model="newFood.type">
           </div>
           <div class="fields">
-            <input type="text" class="input" placeholder="Food Price"  v-model="newFood.price">
+            <input type="text" class="input" placeholder="Food Price" v-model="newFood.price">
           </div>
           <hr>
           <a class="button is-teal" @click="submitFood()">Submit</a>
@@ -94,7 +94,7 @@
         orders: null,
         openedOrder: null,
         modalOpen: false,
-        newFood:{}
+        newFood: {}
       }
     },
     methods: {
@@ -120,8 +120,9 @@
       },
       doneOrder() {
         this.$axios.put(`/order/done/${this.openedOrder.orderId}`, {}).then(resp => {
+          this.openedOrder = null;
           this.initAllOrders();
-          this.openOrder = null;
+
         }).catch(e => {
           console.log(e);
         })
@@ -130,11 +131,11 @@
         this.modalOpen = false;
         EventBus.$emit('closeFoodModal', this.modalOpen);
       },
-      submitFood(){
-          this.$axios.post('/food',this.newFood).then(resp=>{
-              console.log(resp,"hshs")
-              this.closeModal();
-          })
+      submitFood() {
+        this.$axios.post('/food', this.newFood).then(resp => {
+          console.log(resp, "hshs")
+          this.closeModal();
+        })
       }
     },
     mounted() {
