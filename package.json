@@ -8,8 +8,9 @@
     "preinstall": "npm install nodemon -g",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./api/bin/www",
+    "seed":"seed",
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build && seed",
+    "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build && npm run seed",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js"
   },
