@@ -1,5 +1,5 @@
 'use strict'
 module.exports = {
   NODE_ENV: '"production"',
-  BASEURL_PROD:'"https://order-us.herokuapp.com/api"'
+  API_BASE_URL_PROD:'"https://order-us.herokuapp.com/api"'
 }
