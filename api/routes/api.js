@@ -14,7 +14,7 @@ module.exports = (express)=>{
     const api = express.Router();
 
     require('./food')(api, Foods, functions, _);
-    require('./order').default(api, Orders, Discounts,  functions, _);
+    require('./order')(api, Orders, Discounts,  functions, _);
 
     return api;
 }
